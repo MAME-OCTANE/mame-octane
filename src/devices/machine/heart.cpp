@@ -1,4 +1,6 @@
+// heart.cpp
 // license:BSD-3-Clause
+
 #include "emu.h"
 #include "machine/heart.h"
 
@@ -17,11 +19,11 @@ void heart_device::map(address_map &map)
 {
     map(0x000000, 0x3fffff).lrw32(
         NAME([this](offs_t offset) -> uint32_t {
-            logerror("HEART: Read @ [%08x]\n", offset << 2);
+            logerror("[HEART] Read at offset %08x\n", offset << 2);
             return 0;
         }),
         NAME([this](offs_t offset, uint32_t data) {
-            logerror("HEART: Write @ [%08x] = %08x\n", offset << 2, data);
+            logerror("[HEART] Write at offset %08x = %08x\n", offset << 2, data);
         })
     );
 }
