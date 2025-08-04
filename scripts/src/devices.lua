@@ -55,6 +55,11 @@ function devicesProject(_target, _subtarget)
 
 	pchsource(MAME_DIR .. "src/devices/machine/timer.cpp")
 
+	files {
+		"machine/heart.cpp",
+		"machine/heart.h"
+	}
+
 if #disasm_files > 0 then
 	project ("dasm")
 	uuid ("f2d28b0a-6da5-4f78-b629-d834aa00429d")
@@ -81,7 +86,6 @@ if #disasm_files > 0 then
 
 	for key,value in pairs(disasm_files) do
 		if string.endswith(value, ".cpp") then
-			--print("calling pchsource with " .. value)
 			pchsource(value)
 			break
 		end
