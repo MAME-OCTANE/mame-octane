@@ -1,3 +1,4 @@
+// heart.h
 // license:BSD-3-Clause
 #ifndef MAME_MACHINE_HEART_H
 #define MAME_MACHINE_HEART_H
@@ -18,7 +19,6 @@ protected:
     virtual void device_reset() override {}
 };
 
-// device type declaration
 DECLARE_DEVICE_TYPE(HEART, heart_device)
 
 #endif // MAME_MACHINE_HEART_H
